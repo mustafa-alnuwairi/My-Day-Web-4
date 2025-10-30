@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Day Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>My Day Web</h1>
+      <hr />
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#" data-page="myday"><i class="fa-solid fa-sun" style="color: #FFD43B;"></i> My Day</a></li>
+          <li><a href="#" data-page="important"><i class="fa-solid fa-star" style="color: #FFC107;"></i> Important</a></li>
+          <li><a href="#" data-page="planned"><i class="fa-solid fa-calendar-days" style="color: #2196F3;"></i> Planned</a></li>
+          <li><a href="#" data-page="alltasks"><i class="fa-solid fa-list-check" style="color: #9C27B0;"></i> All Tasks</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+    </main>
+  </div>
+
+  <div class="task-form-popup" id="taskPopup">
+    <div class="task-form">
+      <h2>Add New Task</h2>
+      <p class="subtitle">Create a new task with details like priority, tags, and due date</p>
+      
+      <form id="taskForm">
+        <label>Title <span>*</span></label>
+        <input type="text" id="taskTitle" placeholder="What do you want to do?" required />
+        <small>Press Enter to add task, Shift+Enter to stay open</small>
+
+        <label>Description</label>
+        <textarea id="taskDescription" placeholder="Add more details..."></textarea>
+
+        <label>Due Date</label>
+        <input type="date" id="taskDueDate" />
+        <div class="quick-date-buttons">
+          <button type="button" id="setToday">Today</button>
+          <button type="button" id="setTomorrow">Tomorrow</button>
+        </div>
+
+        <label>Priority</label>
+        <div class="priority" id="priorityButtons">
+          <button type="button" class="priority-btn low" data-priority="low">Low</button>
+          <button type="button" class="priority-btn medium active" data-priority="medium">Medium</button>
+          <button type="button" class="priority-btn high" data-priority="high">High</button>
+        </div>
+
+        <label>Tags</label>
+        <input type="text" id="taskTags" placeholder="Add tags (comma separated)" />
+        <small>Press Enter to add tag. Max 6 tags.</small>
+
+        <label>Status</label>
+        <select id="taskStatus">
+          <option value="to-do">To Do</option>
+          <option value="in-progress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+
+        <div class="actions">
+          <button type="submit" class="add">Add Task</button>
+          <button type="button" class="cancel" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="goo.js"></script>
+</body>
+</html>
